@@ -14,6 +14,7 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
 document.querySelector('button').addEventListener('click', () => {
+    console.log('start to listen')
     recognition.start();
 });
 
@@ -36,6 +37,7 @@ recognition.addEventListener('result', (e) => {
 });
 
 recognition.addEventListener('speechend', () => {
+    console.log('speech end')
     recognition.stop();
 });
 

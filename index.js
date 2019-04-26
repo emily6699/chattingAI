@@ -6,8 +6,8 @@ require('dotenv').config()
 const express = require('express');
 const app = express();
 
-app.use(express.static(__dirname + '/views')); //html
-app.use(express.static(__dirname + '/publice')); //js, css, images
+// app.use(express.static(__dirname + '/public/views')); //html
+app.use(express.static(__dirname + '/public')); //js, css, images
 
 const server = app.listen(process.env.PORT || 5000, () => {
     console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
@@ -22,7 +22,7 @@ const apiai = require('apiai')('bbf75702f8f143a69c5a6bada55eb814')
 
 //Web UI
 app.get('/', (req, res) => {
-    res.sendFile('index.html');
+    res.sendFile('/Users/emily/fs/robotAI/public/views/index.html');
 })
 
 io.on('connection', function (socket) {
