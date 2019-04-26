@@ -42,11 +42,12 @@ recognition.addEventListener('speechend', () => {
 });
 
 recognition.addEventListener('error', (e) => {
+
     outputBot.textContent = 'Error: ' + e.error;
 
 });
 
-function synthVoice(text) {
+const synthVoice = (text) => {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance();
     utterance.text = text;
